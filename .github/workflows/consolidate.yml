@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: consolidate-main
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -48,6 +52,7 @@ jobs:
         shell: bash
         run: |
           set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -59,4 +64,18 @@ jobs:
           fi
 
           git commit -m "Consolidate exercise repositories"
-          git push
+
+          # Retry if another commit reaches main while this job is running.
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+
+            echo "Push failed; synchronizing with origin/main (attempt $attempt)."
+            git fetch origin main
+            git rebase origin/main
+          done
+
+          echo "Unable to push after multiple attempts."
+          exit 1
