@@ -1,0 +1,62 @@
+name: Consolidate Exercise Repositories
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout destination
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Clone and copy exercise repositories
+        shell: bash
+        run: |
+          set -e
+
+          repos=(
+            "exercise-3"
+            "Exercise-07-ALB-Ingress-Failure"
+            "Exercise-09-Kubernetes-Scaling"
+            "Exercise-11-CrashLoopBackOff-Investigation"
+            "Exercise-13-Secret-Rotation-Outage"
+            "Exercise-15-Complete-Production-Outage"
+            "Exercise-19-Build-Simple-Helm-Chart"
+            "Exercise-20-External-Secrets"
+            "Exercise-23-Simple-CICD-Pipeline"
+          )
+
+          mkdir -p /tmp/exercise-repos
+
+          for repo in "${repos[@]}"; do
+            echo "Cloning $repo..."
+            git clone --depth 1 "https://github.com/SanjayNivasG/${repo}.git" "/tmp/exercise-repos/${repo}"
+            rm -rf "/tmp/exercise-repos/${repo}/.git"
+
+            mkdir -p "$repo"
+            rsync -a --delete "/tmp/exercise-repos/${repo}/" "$repo/"
+          done
+
+      - name: Commit consolidated repositories
+        shell: bash
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Consolidate exercise repositories"
+          git push
