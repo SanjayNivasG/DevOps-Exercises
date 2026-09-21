@@ -35,6 +35,17 @@ jobs:
             "Exercise-19-Build-Simple-Helm-Chart"
             "Exercise-20-External-Secrets"
             "Exercise-23-Simple-CICD-Pipeline"
+            "Production-ALB-Ingress"
+            "Kubernetes-Node-NotReady-DiskPressure-"
+            "Implement-IRSA-for-Application-Access"
+            "Horizontal-Pod-Autoscaler-HPA-and-Cluster-Autoscaler-on-Amazon-EKS"
+            "GitOps-Platform-Using-ArgoCD-on-Amazon-EKS"
+            "Build-a-Production-EKS-Platform"
+            "Production-Incident-Checkout-API-Latency-Investigation"
+            "EKS-GitOps"
+            "EKS-Node-Scale-Failure-Investigation"
+            "DynamoDB-Application-Deployment-using-Amazon-EKS-IRSA"
+            "External-Secrets-Failure-Investigation-AWS-EKS-"
           )
 
           mkdir -p /tmp/exercise-repos
