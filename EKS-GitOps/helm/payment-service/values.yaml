@@ -1,0 +1,30 @@
+replicaCount: 3
+
+image:
+  repository: 882507341625.dkr.ecr.us-east-1.amazonaws.com/payment-service
+  tag: v1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: alb
+
+serviceAccount:
+  create: true
+  name: payment-sa
+
+irsaRoleArn: arn:aws:iam::882507341625:role/eksctl-exercise24-cluster-addon-iamserviceacc-Role1-cZJEMzmZePxo
+
+secretName: payment-secret
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
