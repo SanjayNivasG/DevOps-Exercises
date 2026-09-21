@@ -1,0 +1,82 @@
+{
+    "cluster": {
+        "name": "exercise17-irsa",
+        "arn": "arn:aws:eks:ap-south-1:882507341625:cluster/exercise17-irsa",
+        "createdAt": "2026-06-30T08:53:21.578000+00:00",
+        "version": "1.33",
+        "endpoint": "https://D9F152F2CD7A648F932FF7B9E9E17855.yl4.ap-south-1.eks.amazonaws.com",
+        "roleArn": "arn:aws:iam::882507341625:role/eksctl-exercise17-irsa-cluster-ServiceRole-AquFjrXFQXvp",
+        "resourcesVpcConfig": {
+            "subnetIds": [
+                "subnet-05f2bc53275ebbca2",
+                "subnet-06cf56a1fbbc7b250",
+                "subnet-00e35dc6d28c6dd2e",
+                "subnet-01c79603a552a4171",
+                "subnet-01886af1981c133c9",
+                "subnet-05726264e59248591"
+            ],
+            "securityGroupIds": [
+                "sg-0f6b109c59ab5426c"
+            ],
+            "clusterSecurityGroupId": "sg-094b488459c121b9e",
+            "vpcId": "vpc-0463f5ca52a8a3d96",
+            "endpointPublicAccess": true,
+            "endpointPrivateAccess": false,
+            "publicAccessCidrs": [
+                "0.0.0.0/0"
+            ],
+            "controlPlaneEgressMode": "AWS_MANAGED"
+        },
+        "kubernetesNetworkConfig": {
+            "serviceIpv4Cidr": "10.100.0.0/16",
+            "ipFamily": "ipv4",
+            "elasticLoadBalancing": {
+                "enabled": false
+            }
+        },
+        "logging": {
+            "clusterLogging": [
+                {
+                    "types": [
+                        "api",
+                        "audit",
+                        "authenticator",
+                        "controllerManager",
+                        "scheduler"
+                    ],
+                    "enabled": false
+                }
+            ]
+        },
+        "identity": {
+            "oidc": {
+                "issuer": "https://oidc.eks.ap-south-1.amazonaws.com/id/D9F152F2CD7A648F932FF7B9E9E17855"
+            }
+        },
+        "status": "ACTIVE",
+        "certificateAuthority": {
+            "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJS212SnI0eU5iTm93RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBMk16QXdPRFV6TVRWYUZ3MHpOakEyTWpjd09EVTRNVFZhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURqMXFua05ObXZLLzZQeWl4K0FwdEVmc2hnSjI1YTFpVjlHbVh4NGdZUUZGdkJOSlJXZmNxV3B2STMKMUNPei9nR093UzUwb01lS2gxQmFyR2swdzJaeUt2WWdWeGc2V21MZVoyek1CcENneE1rR0RwT0luNC95VXVvKwpZcW1YdVBaODRmdURBVnk5ci93d2loeWR3QXZkRE5MVjRjNjJZZkwzQy9UOUhOV25GVXZvTFBoUVlOaHFRc0xSCm1rNG5JejMyMC9mLzhPUGxsd1ErQUMwcWQ0YXpCOVprd25GY29Va0syZzBaSHd1U2FIcERUMnRTakZkVVRoM08KZ0dyU0pySnQyUGVRaklqU0pxd1NJSmxMRnhVTStDTkJ2amlMWHpURGQ2OG8wc3Y1OXhxc1Q1YnN4TVdiQ1N3TgozNVQwRzl0RWdXQjg2aFpKNVRCMk1KL2pTblFMQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSYnpmZGF4Z0xyS3JHQXVTYzNEMU1pWU51ZzZ6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ3NmQ2t3UjRyNgpLb2g5eXgvYlZRb1pxTG9WTnlIWFY4K3ViZTg4RkxBbG9PSnFtTTlpQUJ1NlFIWWlOYXNLVGxQUUV2ZW5NS3BxClhma3NBUm96TWZhQ2cvVytUcDRkVFVpZDE0NTFFTU1xUWIvR0owdWdUVTUzWDMzSFNIVitna3VMNVFhSXFqeUsKclFMbVNnbkxTZTJMZ2JRNDh5SUMzSG1iSGFJOFVHaUpybGovdHd6aWZuYmsraEhKTnlzbit3T2dVOUhpNjhzQQpwMnV1WE41N2RxSStOdnJrdnc4NXUzYWpSdnF0ZnlscS9icnozanNoZlZEQTJabGVVTXBHYkk3WklCdFpMa1BKCkNaRng2UDRTb1l3aTJleG4zdmRsUVF3OEZ4b1lPTnR5Vi9JNlVEdmxCZ0lEbzNkQVZjUXo0ZW9FOThsYWxJcjkKald0cWVjTHFCR29MCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+        },
+        "platformVersion": "eks.39",
+        "tags": {
+            "aws:cloudformation:stack-name": "eksctl-exercise17-irsa-cluster",
+            "alpha.eksctl.io/cluster-name": "exercise17-irsa",
+            "aws:cloudformation:stack-id": "arn:aws:cloudformation:ap-south-1:882507341625:stack/eksctl-exercise17-irsa-cluster/14419c90-7461-11f1-863c-02a2c9bf313d",
+            "eksctl.cluster.k8s.io/v1alpha1/cluster-name": "exercise17-irsa",
+            "alpha.eksctl.io/cluster-oidc-enabled": "true",
+            "aws:cloudformation:logical-id": "ControlPlane",
+            "alpha.eksctl.io/eksctl-version": "0.228.0",
+            "Name": "eksctl-exercise17-irsa-cluster/ControlPlane"
+        },
+        "accessConfig": {
+            "authenticationMode": "API_AND_CONFIG_MAP"
+        },
+        "upgradePolicy": {
+            "supportType": "EXTENDED"
+        },
+        "deletionProtection": false,
+        "controlPlaneScalingConfig": {
+            "tier": "standard"
+        }
+    }
+}
