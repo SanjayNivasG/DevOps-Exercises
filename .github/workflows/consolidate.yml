@@ -26,15 +26,6 @@ jobs:
           set -e
 
           repos=(
-            "exercise-3"
-            "Exercise-07-ALB-Ingress-Failure"
-            "Exercise-09-Kubernetes-Scaling"
-            "Exercise-11-CrashLoopBackOff-Investigation"
-            "Exercise-13-Secret-Rotation-Outage"
-            "Exercise-15-Complete-Production-Outage"
-            "Exercise-19-Build-Simple-Helm-Chart"
-            "Exercise-20-External-Secrets"
-            "Exercise-23-Simple-CICD-Pipeline"
             "Production-ALB-Ingress"
             "Kubernetes-Node-NotReady-DiskPressure-"
             "Implement-IRSA-for-Application-Access"
