@@ -37,7 +37,6 @@ jobs:
             "EKS-Node-Scale-Failure-Investigation"
             "DynamoDB-Application-Deployment-using-Amazon-EKS-IRSA"
             "External-Secrets-Failure-Investigation-AWS-EKS-"
-            "PRODIGY_INFOTECH"
           )
 
           mkdir -p /tmp/exercise-repos
